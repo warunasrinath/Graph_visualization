@@ -3,6 +3,7 @@
         <style> body { margin: 0; } </style>
       
         <script src="//unpkg.com/3d-force-graph"></script>
+
         <!--<script src="../../dist/3d-force-graph.js"></script>-->
       </head>
       
@@ -15,11 +16,11 @@
       
           const Graph = ForceGraph3D()
             (document.getElementById('3d-graph'))
-              .jsonUrl('miserables.json')
+              .jsonUrl('./src/visualdata.json')
               .nodeAutoColorBy('group')
               .nodeThreeObject(node => {
                 const sprite = new SpriteText(node.id);
-                sprite.material.depthWrite = false; // make sprite background transparent
+                sprite.material.depthWrite = false;
                 sprite.color = node.color;
                 sprite.textHeight = 8;
                 return sprite;
